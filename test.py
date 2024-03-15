@@ -27,7 +27,7 @@ button = st.button("Confirm")
 if button and upload is not None:
 
     if upload.type == "application/pdf":
-        images = pdf2image.convert_from_bytes(upload.read(), size=size)
+        images = pdf2image.convert_from_bytes(poppler_path=upload.read(), size=size)
         for i, page in enumerate(images):
 
             st.subheader("Preview:")
