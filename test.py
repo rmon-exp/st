@@ -29,12 +29,12 @@ if button and upload is not None:
     if upload.type == "application/pdf":
         images = pdf2image.convert_from_bytes(pdf_file=upload.read(), size=size)
         for i, page in enumerate(images):
-
-            st.subheader("Preview:")
-            st.image(page, use_column_width=True)
-            
-            img = page
-            buf = BytesIO()
-            img.save(buf, format=output_type, dpi=(dpi, dpi))
-            byte_im = buf.getvalue()
-            st.download_button("Download", data=byte_im, file_name=f"{name}.{ext}")
+            if i = 0:
+                st.subheader("Preview:")
+                st.image(page, use_column_width=True)
+                
+                img = page
+                buf = BytesIO()
+                img.save(buf, format=output_type, dpi=(dpi, dpi))
+                byte_im = buf.getvalue()
+                st.download_button("Download", data=byte_im, file_name=f"{name}.{ext}")
