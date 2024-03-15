@@ -29,7 +29,7 @@ if button and upload is not None:
     if upload.type == "application/pdf":
         images = pdf2image.convert_from_bytes(pdf_file=upload.read(), size=size)
         for i, page in enumerate(images):
-            if i = 0:
+            if i == 0:
                 st.subheader("Preview:")
                 st.image(page, use_column_width=True)
                 
